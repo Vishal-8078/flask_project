@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Quick Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body background="{{ url_for('static', filename='images/landscape.jpg') }}">
+    <div class="container">
+        <h1>REGISTRATION PAGE</h1>
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+        <form method="post">
+            <label for="name">Enter Name:</label>
+            <input type="text" name="name" required><br>
+
+            <label for="email">Enter Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="mobile">Enter Mobile:</label>
+            <input type="tel" name="mobile" required><br>
+
+            <label for="district">Enter District:</label>
+            <input type="text" name="district" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>
